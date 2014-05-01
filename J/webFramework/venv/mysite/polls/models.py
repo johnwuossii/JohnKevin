@@ -11,9 +11,9 @@ class Poll(models.Model):
         return self.question
 
 class Choice(models.Model):
-    poll = ForeignKey(Poll)
+    poll = models.ForeignKey(Poll)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField()
     
-    def __ unicode__(self):
-      return self.choice_text
+    def __unicode__(self):
+        return self.choice_text
